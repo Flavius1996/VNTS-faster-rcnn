@@ -2,6 +2,10 @@
 This module is an extension of [Faster-RCNN](https://github.com/rbgirshick/py-faster-rcnn) to detect and classify [Vietnam Traffic Signs](https://drive.google.com/open?id=0B9hMAZTpHpyCclFwT2NFWTRYSjg).
 For installation, I modified the original Faster-RCNN [rbgirshick](https://github.com/rbgirshick/py-faster-rcnn/blob/master/README.md) and [sridhar912](https://github.com/sridhar912/tsr-py-faster-rcnn/README.md) file to adapt changes for run this module. Please check below for license and citation information.
 
+View step-by-step of my modification at:
+	https://docs.google.com/document/d/1KnBSpKmxlk21EGc_wvxeYGF7Cd-LIoZHF81NKm9Ze0U/edit#heading=h.hejksbigjuke
+
+
 ### Contents
 1. [Requirements: software & hardware](#requirements-software-hardware)
 3. [Basic installation](#installation-sufficient-for-the-demo)
