@@ -1,4 +1,4 @@
-### Vietnam Traffic Signs Detection and Classification
+### Vietnam Traffic Signs Detection using Faster RCNN
 This module is an extension of [Faster-RCNN](https://github.com/rbgirshick/py-faster-rcnn) to detect and classify [Vietnam Traffic Signs](https://drive.google.com/open?id=0B9hMAZTpHpyCclFwT2NFWTRYSjg).
 For installation, I modified the original Faster-RCNN [rbgirshick](https://github.com/rbgirshick/py-faster-rcnn) and [sridhar912](https://github.com/sridhar912/tsr-py-faster-rcnn) file to adapt changes for run this module. Please check below for license and citation information.
 
@@ -10,7 +10,7 @@ View step-by-step of my modification at:
 
 
 ### Contents
-1. [Requirements: software & hardware](#requirements-software-hardware)
+1. [Requirements: software & hardware](#requirements-software-&-hardware)
 3. [Basic installation](#installation-sufficient-for-the-demo)
 4. [Demo](#demo)
 5. [Beyond the demo: training and testing](#beyond-the-demo-installation-for-training-and-testing-models)
@@ -43,7 +43,7 @@ More details at https://github.com/rbgirshick/py-faster-rcnn
 
     # If you're experienced with Caffe and have all of the requirements installed
     # and your Makefile.config in place, then simply do:
-    make -j8 && make pycaffe
+    make pycaffe -j 8
     ```
 
 4. Download pre-trained detector from this [link](https://drive.google.com/file/d/1pH9OkaiwzOmHrGBVwBBekmXKyRkqJwUm). This downloaded model need to be placed under the directory
@@ -65,27 +65,26 @@ cd $FRCN_ROOT/data/demo
 ```
 For the complete testing, [test dataset](https://drive.google.com/open?id=1b3TSfcyODeybJPoVLdwJALcz7JMPPlxx) has to be download and placed in the folder mentioned above
 
-### Beyond the demo: installation for training and testing models
+### Installation for training and testing models
 
 Before starting, you need to download the Vietnam traffic sign datasets from [VietNam Traffic Signs Datasets](https://drive.google.com/open?id=18Wm6viFtG7eScIxRw26Zn3gd5rhsmQ6R). In this implementation, the training and test datasets that were used for the competition ( [training data set](https://drive.google.com/open?id=1XU2jQrHc24KPelBf_C4LxBon1z3uPoUB), [test data set](https://drive.google.com/open?id=1b3TSfcyODeybJPoVLdwJALcz7JMPPlxx) ) is used.
 
-Here, the main goal is to enable Faster R-CNN to detect and classify traffic sign. So, model performance evaluation in test dataset was not carried out. The downloaded test dataset was only used for visual testing. After the dataset is downloaded, prepare the following directory structure. The training zip file contains the following files
+Here, the main goal is to enable Faster R-CNN to detect and classify traffic sign. So, model performance evaluation in test dataset was not carried out. The downloaded test dataset was only used for visual testing. After the dataset is downloaded, prepare the following directory structure. The training folder contains the following files:
 - folders
 - images (00000.ppm, 00001.ppm...., 00423.ppm)
-- gt.txt
+- train_annotation.txt
 
-Copy all the images into Images directory as shown below. Rename gt.txt as train.txt and keep both gt.txt and train.txt as shown below. 
+Copy all the images into Images directory as shown below. Copy train_annotation.txt to ImageSets folder as train.txt and to Annotations folder as gt.txt
 
 ##### Format Your Dataset
-At first, the dataset must be well organzied with the required format.
 ```
 VNTSDB
 |-- Annotations
-    |-- gt.txt (Annotation files)
+    |-- gt.txt (clone train_annotation.txt)
 |-- Images
-    |-- *.ppm (Image files)
+    |-- *.ppm (424 training image files)
 |-- ImageSets
-    |-- train.txt
+    |-- train.txt (clone train_annotation.txt)
 ```
 
 ##### Download pre-trained ImageNet models
@@ -102,7 +101,7 @@ ZF was trained at MSRA.
 ### Usage
 This implementation is tested only for approximate joint training.
 
-To train and test a TSR Faster R-CNN detector using the **approximate joint training** method, use `experiments/scripts/faster_rcnn_end2end.sh`.
+To train a VNTSDB Faster R-CNN detector using the **approximate joint training** method, use `experiments/scripts/faster_rcnn_end2end_trainonly.sh`.
 Output is written underneath `$FRCN_ROOT/output`.
 
 ```Shell
@@ -127,7 +126,7 @@ output/<experiment directory>/<dataset name>/
 
 
 
-# *Faster* R-CNN: Towards Real-Time Object Detection with Region Proposal Networks
+# REFERENCE: *Faster* R-CNN: Towards Real-Time Object Detection with Region Proposal Networks
 
 By Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun (Microsoft Research)
 
