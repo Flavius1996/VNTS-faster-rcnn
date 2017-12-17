@@ -3,7 +3,8 @@ This module is an extension of [Faster-RCNN](https://github.com/rbgirshick/py-fa
 For installation, I modified the original Faster-RCNN [rbgirshick](https://github.com/rbgirshick/py-faster-rcnn) and [sridhar912](https://github.com/sridhar912/tsr-py-faster-rcnn) file to adapt changes for run this module. Please check below for license and citation information.
 
 View step-by-step of my modification at:
-	https://docs.google.com/document/d/1KnBSpKmxlk21EGc_wvxeYGF7Cd-LIoZHF81NKm9Ze0U/edit#heading=h.hejksbigjuke
+
+https://docs.google.com/document/d/1KnBSpKmxlk21EGc_wvxeYGF7Cd-LIoZHF81NKm9Ze0U/edit#heading=h.hejksbigjuke
 
 
 ![OUTPUT](demonstration_resize60.gif)
@@ -45,6 +46,7 @@ More details at https://github.com/rbgirshick/py-faster-rcnn
     # and your Makefile.config in place, then simply do:
     make pycaffe -j 8
     ```
+My guide at: https://docs.google.com/document/d/1p787Qofm0vJwMe80ot_ADZoY5xYPnWuDYxEzCOKkfbA
 
 4. Download pre-trained detector from this [link](https://drive.google.com/file/d/1pH9OkaiwzOmHrGBVwBBekmXKyRkqJwUm). This downloaded model need to be placed under the directory
 	```Shell
